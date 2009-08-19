@@ -1,0 +1,16 @@
+#sandbox{
+    float:right;
+    display:none;
+    background-color: #c2e072;
+    border: 3px solid #2c6429;
+    padding: 0 10px 10px 10px;
+    margin: 10px 10px 0 0;
+}
+
+#sandbox a {
+    color: green;
+}
+
+#sandbox a.none {
+    color: #333;
+}
