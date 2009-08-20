@@ -65,6 +65,12 @@ var ShoutTests = {
                  equals($.shout.registry['event-2'][0], callback1);
                  equals($.shout.registry['event-2'][1], callback2);
         });
+       test("Test hear returns the original object", function() {
+                var dummyCallback = function (data) {};
+                var $element = $("#top-message");
+                expect(1);
+                equals($element.hear("event-3", dummyCallback), $element);
+        });
 
     }
 }

@@ -15,7 +15,9 @@ jQuery.extend(jQuery.fn,
         var list = jQuery.shout.registry[eventName];
         if (!list)
             jQuery.shout.registry[eventName] = [];
+
         jQuery.shout.registry[eventName].push(messageCallback);
+        return this;
     }
 });
 
