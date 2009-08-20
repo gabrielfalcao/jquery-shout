@@ -69,13 +69,22 @@ var ShoutTests = {
         test("More than 1 html element hearing a event", function() {
                  var callback1 = function (data) {};
                  var callback2 = function (data) {};
-                 expect(2);
-                 $("#top-message").hear("event-2", callback1);
-                 $("#email-user-box").hear("event-2", callback2);
+                 var $element1 = $("#top-message");
+                 var $element2 = $("#email-user-box");
+                 expect(4);
+                 $element1.hear("event-2", callback1);
+                 $element2.hear("event-2", callback2);
+
                  equals($._jq_shout.registry['event-2'][0].callback,
                         callback1);
+                 equals($._jq_shout.registry['event-2'][0].source,
+                        $element1);
+
                  equals($._jq_shout.registry['event-2'][1].callback,
                         callback2);
+                 equals($._jq_shout.registry['event-2'][1].source,
+                        $element2);
+
         });
        test("Test hear returns the original object", function() {
                 var dummyCallback = function (data) {};
