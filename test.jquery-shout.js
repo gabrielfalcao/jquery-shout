@@ -16,7 +16,20 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+var ShowMessage = function (text, timeout, callback) {
+    var $mainDiv = $("#top-message");
+    $mainDiv.find(".text").text(text);
 
+    $mainDiv.show('drop', {'direction': 'up'}, 'slow', function (){
+        setTimeout(function () {
+                       $mainDiv.hide('drop',
+                                     {'direction': 'up'},
+                                     'slow',
+                                     callback);
+                       return false;
+                   }, timeout);
+                  });
+}
 var ShoutTests = {
     run: function () {
         module("Core");
@@ -37,12 +50,21 @@ var ShoutTests = {
                  var myCallback = function (data) {};
 
                  expect(2);
-                 ok(typeof $("#email-info").hear === 'function',
+                 ok(typeof $("#email-user-box").hear === 'function',
                     'A jQuery HTML element should have the method "hear"');
-                 // will hearing the event "new-message"
-                 $("#email-info").hear("new-message", myCallback);
-                 equals($.shout.registry['new-message'][0], myCallback,
-                        'jQuery.shout.registry["new-message"][0] should be the callback that my jQuery element has set to.');
+                 // will hearing the event "event-1"
+                 $("#email-user-box").hear("event-1", myCallback);
+                 equals($.shout.registry['event-1'][0], myCallback);
              });
+        test("More than 1 html element hearing a event", function() {
+                 var callback1 = function (data) {};
+                 var callback2 = function (data) {};
+                 expect(2);
+                 $("#top-message").hear("event-2", callback1);
+                 $("#email-user-box").hear("event-2", callback2);
+                 equals($.shout.registry['event-2'][0], callback1);
+                 equals($.shout.registry['event-2'][1], callback2);
+        });
+
     }
 }
