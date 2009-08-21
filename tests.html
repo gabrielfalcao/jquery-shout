@@ -1,39 +1,55 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <title>jQuery Shout's tests</title>
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jquery.ui.js"></script>
-    <script type="text/javascript" src="jquery.shout.js"></script>
-    <script type="text/javascript" src="testrunner.js"></script>
-    <script type="text/javascript" src="test.jquery-shout.js"></script>
-    <link rel="stylesheet" href="testsuite.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="sandbox.css" type="text/css" media="screen" />
-    <script type="text/javascript">
-      $(document).ready(function(){
-          ShoutTests.run();
-      });
-    </script>
-  </head>
-  <body>
-      <!-- start of test-specific elements -->
-      <div id="top-message">
-	<div class="text">You have got new messages</div>
-      </div><!-- end #top-message -->
+    <head>
+	<title>jQuery Shout's tests</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.ui.js"></script>
+	<script type="text/javascript" src="jquery.shout.js"></script>
+	<script type="text/javascript" src="testrunner.js"></script>
+	<script type="text/javascript" src="test.jquery-shout.js"></script>
+	<link rel="stylesheet" href="testsuite.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="sandbox.css" type="text/css" media="screen" />
+	<script type="text/javascript">
+	    $(document).ready(function(){
+            ShoutTests.run();
+	    });
+	</script>
+    </head>
+    <body>
+	<!-- start of test-specific elements -->
+	<div id="top-message">
+	    <div class="text">You have got new messages</div>
+	</div><!-- end #top-message -->
 
-      <div id="sandbox">
 	<div id="email-user-box">
-	  <h3>Welcome Gabriel,</h3>
-	  <div class="metadata">
-	    <a id="messages-msg" class="none" href="#read">you have <span class="number">no</span> messages</a>
-	  </div>
+	    <h3>Welcome Gabriel,</h3>
+	    <div class="metadata">
+		<a id="messages-msg" class="none" href="#read">you have <span class="number">no</span> messages</a>
+	    </div>
 	</div><!-- end #email-user-box -->
-      </div><!-- end #sandbox -->
-      <!-- end of test-specific elements -->
-      <h1>jQuery Shout plugin test suite</h1>
-      <h2 id="banner"></h2>
-      <h2 id="userAgent"></h2>
-      <ol id="tests"></ol>
-      <div id="main"></div>
-  </body>
+	<div id="email-list">
+	    Your messages
+	    <div class="messages">
+		<ul>
+		    <li class="dark">Your forgotten password...</li>
+		    <li>Welcome to HackLab!</li>
+		    <li class="dark">Your forgotten password...</li>
+		    <li>Welcome to HackLab!</li>
+		    <li class="dark">Your forgotten password...</li>
+		    <li>Welcome to HackLab!</li>
+		    <li class="dark">Your forgotten password...</li>
+		    <li>Welcome to HackLab!</li>
+		    <li class="dark">Your forgotten password...</li>
+		    <li>Welcome to HackLab!</li>
+		</ul>
+	    </div>
+	</div><!-- end #email-list -->
+
+	<!-- end of test-specific elements -->
+	<h1>jQuery Shout plugin test suite</h1>
+	<h2 id="banner"></h2>
+	<h2 id="userAgent"></h2>
+	<ol id="tests"></ol>
+	<div id="main"></div>
+    </body>
 </html>
