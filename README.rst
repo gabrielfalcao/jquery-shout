@@ -9,7 +9,8 @@ Motivation
 
 Imagine a web application with a rich user experience, e.g. a webmail.
 Whenever an email arrives many components could be changed, for instance:
-* The email list would be prepended with new messages
+
+* The email list would be prepended with new messages.
 * Some places that shows how many emails you have, must have its counter increased.
 * Maybe you would like to take some action to alert the user that he have new emails.
 
