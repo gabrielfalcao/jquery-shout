@@ -1,0 +1,98 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+body {
+    background: url("top.png") repeat-x;
+    font-family: Helvetica, FreeSans;
+}
+#top {
+    color: #888a85;
+    font-family: Helvetica;
+    font-size: 40px;
+    font-weight:bold;
+    height: 90px;
+    padding: 25px 0 0 80px;
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#email-user-box{
+    position:absolute;
+    right:0;
+    color:#555753;
+    background-color: #EEEEEC;
+    border: 2px solid #DEDEDE;
+    top:0;
+    font-size: 13px;
+    padding: 16px 0 0 0;
+    text-align:center;
+    margin: 10px 10px 0 0;
+    width:223px;
+    height:47px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+#email-user-box a {
+    margin: 10px 0 0 0;
+    color: green;
+}
+
+#email-user-box .username {
+    color: #204a87;
+}
+#email-user-box a.none {
+    color: #333;
+}
+
+#email-list {
+    background-color: #e4e4e4;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border: 1px solid #d3d7cf;
+    font-size: 18px;
+    color: #2c6429;
+    width: 90%;
+    top: 104px;
+    margin: 0 auto;
+    text-align:center;
+}
+#email-list .warning {
+    color: #d1524e;
+    font-size: 12px;
+}
+#email-list .messages {
+    text-align:left
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+}
+
+#email-list .messages li {
+    text-align:left;
+    font-size: 14px;
+    color: #888A85;
+    padding: 2px 0 2px 20px;
+    background-repeat: no-repeat;
+    background-image: url('letter_open.png');
+}
+
+#email-list .messages li a {
+    color: #888A85;
+}
+
+#email-list .messages li.new a {
+    color: #565248;
+    font-weight: bold;
+
+}
+
+#email-list .messages li.new {
+    background-image: url('letter.png');
+}
+
+#email-list li.dark {
+    background-color: #d3d7cf;
+}
