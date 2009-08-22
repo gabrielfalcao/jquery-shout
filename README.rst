@@ -9,9 +9,9 @@ Motivation
 
 Imagine a web application with a rich user experience, e.g. a webmail.
 Whenever an email arrives many components could be changed, for instance:
- * The email list would be prepended with new messages
- * Some places that shows how many emails you have, must have its counter increased.
- * Maybe you would like to take some action to alert the user that he have new emails.
+* The email list would be prepended with new messages
+* Some places that shows how many emails you have, must have its counter increased.
+* Maybe you would like to take some action to alert the user that he have new emails.
 
 With jQuery shout, each of those elements will "hear" some event, and take different actions.
 And whenever you want to make your visual components take a set of actions, you just "shout" on them.
