@@ -106,3 +106,7 @@ a#login {
 #email-list li.dark {
     background-color: #d3d7cf;
 }
+
+img.fakebtn {
+    cursor: pointer;
+}

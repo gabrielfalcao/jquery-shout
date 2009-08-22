@@ -1,3 +1,15 @@
+/*
+ * jQuery Shout plugin
+ * http://gnu.gabrielfalcao.com/shout
+ *
+ * Copyright (c) 2009 Gabriel Falcão
+ * Dual licensed under the MIT and GPL 3+ licenses.
+ *
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * Version: 0.1
+ */
 jQuery.extend(
 {
     _jq_shout: {},
@@ -20,9 +32,9 @@ jQuery.extend(jQuery.fn,
     hear: function (eventName, messageCallback) {
         var $self = this;
         var list = jQuery._jq_shout.registry[eventName];
-        if (!list)
+        if (!list) {
             jQuery._jq_shout.registry[eventName] = [];
-
+        }
         return this.each(function() {
                              var item = {
                                  source: $self,

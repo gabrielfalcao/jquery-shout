@@ -4,25 +4,23 @@
     <title>jquery shout - example page</title>
     <link rel="stylesheet" href="examples.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="jquery-ui.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jquery.ui.js"></script>
-    <script type="text/javascript" src="jquery.shout.js"></script>
+    <script type="text/javascript" src="../jquery-shout/jquery.js"></script>
+    <script type="text/javascript" src="../jquery-shout/jquery.ui.js"></script>
+    <script type="text/javascript" src="../jquery-shout/jquery.shout.js"></script>
     <script type="text/javascript" src="examples.js"></script>
-    <script type="text/javascript">
-    </script>
   </head>
     <body>
       <div id="top">
 	jQuery Shout!
-	<span class="mini">Shout on your visual components and let them behavior for themselves!</span>
+	<span class="mini">Visual components hear, you shout!</span>
       </div>
 
       <div id="email-user-box">
 	<h3 class="welcome">Welcome <span class="username">john doe</span>,</h3>
 	<div class="metadata">
 	  <a id="messages-msg" class="none" href="#read">you have <span class="number">no</span> messages</a>
-	  <img src="images/refresh.png" id="refresh"/>
-	  <img src="images/logout.png" id="logout"/>
+	  <img src="images/refresh.png" class="fakebtn" id="refresh"/>
+	  <img src="images/logout.png" class="fakebtn" id="logout"/>
 	</div>
 	<a id="login" href="#login">login</a>
       </div>
