@@ -8,7 +8,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/copyleft/gpl.html
  *
- * Version: 0.1
+ * Version: 0.2
  */
 jQuery.extend(
     {
