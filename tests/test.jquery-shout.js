@@ -174,6 +174,11 @@ var ShoutTests = {
 
                  stop();
              });
-
+        test('Shouting for no elements hearing should do nothing, and throw no errors as well',
+             function() {
+                 expect(1);
+                 $.shout('no-elements-hearing-this');
+                 ok("this part was reached, everything is fine!");
+             });
     }
 }
