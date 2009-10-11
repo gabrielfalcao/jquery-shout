@@ -47,9 +47,9 @@ var ShowMessage = function ($self, data) {
         $self.find(".text").text(data.text);
     }
     var assertionMessage1 = $self.attr('id') +
-                            ' did show the message: "' +
-                            data.text +
-                            '"'
+        ' did show the message: "' +
+        data.text +
+        '"'
     ShowFromTop($self, data);
     ok(true, assertionMessage1);
 }
@@ -57,17 +57,17 @@ var ShoutTests = {
     run: function () {
         module("Core");
         test('jQuery should have "_jq_shout" attribute.', function() {
-          expect(1);
-          ok(typeof jQuery._jq_shout === 'object',
-             "jQuery has the attribute shout ($._jq_shout)");
-        });
+                 expect(1);
+                 ok(typeof jQuery._jq_shout === 'object',
+                    "jQuery has the attribute shout ($._jq_shout)");
+             });
 
         module("Listeners");
         test("Shout hold a object with a table of listeners", function() {
-          expect(1);
-          ok(typeof jQuery._jq_shout.registry === 'object',
-             "The registry of listeners should be a object");
-        });
+                 expect(1);
+                 ok(typeof jQuery._jq_shout.registry === 'object',
+                    "The registry of listeners should be a object");
+             });
         test('jQuery HTML elements should be able to "hear" a event',
              function() {
                  var myCallback = function (data) {};
@@ -102,13 +102,29 @@ var ShoutTests = {
                  equals($._jq_shout.registry['event-2'][1].source,
                         $element2);
 
-        });
-       test("Test hear returns the original object", function() {
-                var dummyCallback = function (data) {};
-                var $element = $("#top-message");
-                expect(1);
-                equals($element.hear("event-3", dummyCallback), $element);
-        });
+             });
+        test("Hearing through one unexistent element should throw a exception", function() {
+                 expect(2);
+                 try {
+                     $("#unexistent > .element").hear(
+                         'signal-for-unexistent-element',
+                         function ($self, data){
+                             // do nothing
+                         }
+                     );
+
+                     $.shout('signal-for-unexistent-element');
+                 } catch (e) {
+                     ok("got a error");
+                     equals('The current DOM does not have any "#unexistent > .element" matched elements', e);
+                 }
+             });
+        test("Test hear returns the original object", function() {
+                 var dummyCallback = function (data) {};
+                 var $element = $("#top-message");
+                 expect(1);
+                 equals($element.hear("event-3", dummyCallback), $element);
+             });
 
         module("Shouters");
         test('jQuery should be able to shout with some data',
@@ -122,14 +138,14 @@ var ShoutTests = {
                                             start();
                                         });
                  $.shout("show-message",
-                        {text: 'First shout!',
-                         timeout: 2000});
+                         {text: 'First shout!',
+                          timeout: 2000});
                  equals($("#top-message").find(".text").text(),
                         'First shout!',
                         'After shouting, the top message should contain the text I specified');
                  stop();
              });
-       test('Many hearers can take actions at once',
+        test('Many hearers can take actions at once',
              function() {
                  expect(4);
                  $("#top-message").hear("user-login", function ($self, data){
